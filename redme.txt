@@ -1,0 +1,28 @@
+sudo nest new server
+nest -h
+
+// users
+nest g mo users
+nest g co users
+nest g s users
+
+npm i sequelize sequelize-cli sequelize-typescript
+npm i @nestjs/sequelize
+
+npm i @nestjs/config
+npm i mysql2
+
+npm i class-validator
+
+npm i bcrypt
+npm i @types/bcrypt
+
+nest g mo auth
+nest g s auth
+
+npm i passport passport-local @nestjs/passport
+npm i express-session
+npm i @types/express-session @types/passport
+
+
+
