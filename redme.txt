@@ -24,5 +24,6 @@ npm i passport passport-local @nestjs/passport
 npm i express-session
 npm i @types/express-session @types/passport
 
+npm i @nestjs/swagger
 
 
