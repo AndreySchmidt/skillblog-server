@@ -30,3 +30,13 @@ nest g mo boiler-parts
 nest g co boiler-parts
 nest g s boiler-parts
 
+npx sequelize-cli init
+npx sequelize-cli model:generate --name BoilerParts --attributes name:string
+
+npx sequelize-cli db:migrate
+npx sequelize-cli seed:generate --name boiler-parts
+
+npm i @faker-js/faker
+npx sequelize-cli db:migrate
+npx sequelize-cli db:seed:all
+
