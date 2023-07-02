@@ -26,4 +26,7 @@ npm i @types/express-session @types/passport
 
 npm i @nestjs/swagger
 
+nest g mo boiler-parts
+nest g co boiler-parts
+nest g s boiler-parts
 
