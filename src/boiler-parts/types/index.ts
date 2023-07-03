@@ -1,0 +1,113 @@
+import { faker } from '@faker-js/faker';
+import { ApiProperty } from '@nestjs/swagger';
+
+export interface IBoilerPartsQuery {
+  limit: string;
+  offset: string;
+}
+
+class BoilerParts {
+  @ApiProperty({ example: 1 })
+  id: number;
+
+  @ApiProperty({ example: faker.lorem.sentence(2) })
+  boiler_manufacturer: string;
+
+  @ApiProperty({ example: 143543 })
+  price: string;
+
+  @ApiProperty({ example: faker.lorem.sentence(2) })
+  parts_manufacturer: string;
+
+  @ApiProperty({ example: faker.internet.password() })
+  vendor_code: string;
+
+  @ApiProperty({ example: faker.lorem.word() })
+  name: string;
+
+  @ApiProperty({ example: faker.lorem.sentence() })
+  description: string;
+
+  @ApiProperty({ example: faker.lorem.sentence() })
+  compatibility: string;
+
+  @ApiProperty({ example: faker.image.city() })
+  images: string;
+
+  @ApiProperty({ example: 4 })
+  in_stock: number;
+
+  @ApiProperty({ example: true })
+  bestseller: boolean;
+
+  @ApiProperty({ example: false })
+  new: boolean;
+
+  @ApiProperty({ example: 23 })
+  popularity: number;
+
+  @ApiProperty({ example: '2021-02-16T12:32:33.000Z' })
+  createdAt: string;
+
+  @ApiProperty({ example: '2021-02-16T12:32:33.000Z' })
+  updatedAt: string;
+}
+
+export class PaginateAndFilterResponse {
+  @ApiProperty({ example: 21 })
+  count: number;
+
+  @ApiProperty({ type: BoilerParts, isArray: true })
+  rows: BoilerParts;
+}
+
+export class Bestsellers extends BoilerParts {
+  @ApiProperty({ example: true })
+  bestseller: boolean;
+}
+
+export class GetBestsellersResponse extends PaginateAndFilterResponse {
+  @ApiProperty({ example: 21 })
+  count: number;
+
+  @ApiProperty({ type: BoilerParts, isArray: true })
+  rows: Bestsellers;
+}
+
+export class NewParts extends BoilerParts {
+  @ApiProperty({ example: true })
+  new: boolean;
+}
+
+export class GetNewResponse extends PaginateAndFilterResponse {
+  @ApiProperty({ example: 21 })
+  count: number;
+
+  @ApiProperty({ type: BoilerParts, isArray: true })
+  rows: NewParts;
+}
+
+export class SearchByLetterResponse extends BoilerParts {
+  @ApiProperty({ example: 'Some Name' })
+  name: string;
+}
+export class SearchResponse extends PaginateAndFilterResponse {
+  @ApiProperty({ type: SearchByLetterResponse, isArray: true })
+  rows: SearchByLetterResponse;
+}
+
+export class SearchRequest {
+  @ApiProperty({ example: 'o' })
+  search: string;
+}
+
+export class GetByNameResponse extends BoilerParts {
+  @ApiProperty({ example: 'Some Name' })
+  name: string;
+}
+export class GetByNameRequest {
+  @ApiProperty({ example: 'Some Name' })
+  name: string;
+}
+
+export class FindOneResponse extends BoilerParts {}
