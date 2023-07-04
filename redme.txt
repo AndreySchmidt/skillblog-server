@@ -40,3 +40,7 @@ npm i @faker-js/faker
 npx sequelize-cli db:migrate
 npx sequelize-cli db:seed:all
 
+nest g mo shopping-cart
+nest g co shopping-cart
+nest g s shopping-cart
+
