@@ -44,3 +44,11 @@ nest g mo shopping-cart
 nest g co shopping-cart
 nest g s shopping-cart
 
+nest g mo payment
+nest g co payment
+nest g s payment
+
+yookassa.ru (запросы туда делать только с бэка ибо корс)
+npm i axios
+
+
