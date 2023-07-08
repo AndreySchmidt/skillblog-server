@@ -51,4 +51,4 @@ nest g s payment
 yookassa.ru (запросы туда делать только с бэка ибо корс)
 npm i axios
 
-
+npm run test:e2e
