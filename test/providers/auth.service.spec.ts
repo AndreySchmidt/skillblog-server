@@ -16,7 +16,7 @@ const mockedUser = {
   password: 'aaaa',
 };
 
-describe('Auth controller', () => {
+describe('Auth service', () => {
   // экземпляр приложения
   let app: INestApplication;
   let authService: AuthService;
