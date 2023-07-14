@@ -6,10 +6,6 @@ import { databaseConfig } from 'src/config/configuration';
 import { SequelizeConfigService } from 'src/config/sequelizeConfig.service';
 import { User } from 'src/users/users.model';
 import * as bcrypt from 'bcrypt';
-import * as request from 'supertest';
-import * as session from 'express-session';
-import * as passport from 'passport';
-import { AuthModule } from 'src/auth/auth.module';
 import { BoilerPartsModule } from 'src/boiler-parts/boiler-parts.module';
 import { BoilerPartsService } from 'src/boiler-parts/boiler-parts.service';
 import { UsersService } from 'src/users/users.service';
@@ -38,7 +34,6 @@ describe('Shopping cart controller', () => {
           useClass: SequelizeConfigService,
         }),
         ConfigModule.forRoot({ load: [databaseConfig] }),
-        AuthModule,
         BoilerPartsModule,
         ShoppingCartModule,
       ],
